@@ -46,7 +46,7 @@ These components allow us to reuse code within our project, and throughout other
 	})
 ````
 
-###Note:
+<!-- ###Note:
 Most of these attributes within the directive example above are optional. For more information about directives visit the documentation at: https://docs.angularjs.org/guide/directive
 
 
@@ -129,7 +129,7 @@ Next we pass in element, or elem. This is the actual DOM element where we added 
 	
 	}
 ````
-Inside our link block we can write the code necessary to show our pending spinner while we are fetching data from our server. Try console.log(scope, elem, attrs) to get a good look at the things you have available to you. There are many ways to accomplish this next task so play with a few things to try and get it right. 
+Inside our link block we can write the code necessary to show our pending spinner while we are fetching data from our server. Try console.log(scope, elem, attrs) to get a good look at the things you have available to you. There are many ways to accomplish this next task so play with a few things to try and get it right.  -->
 
 ####Steps to complete the "pending" directive
 

@@ -1,14 +1,14 @@
-var app = angular.module('pending', []);
+var app = angular.module('directiveWorkshop', []);
 
 app.directive('pendingDir', function(){
 	return {
-		restrict: 'A',
+		restrict: 'AE',
 		scope: {
 			request: '&',
 		},
-		link: function() {
-
+		link: function(scope, elem, attrs) {
+			console.log(scope, elem, attrs)
 		}
 	}
 
-};
+});
