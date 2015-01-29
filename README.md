@@ -15,7 +15,7 @@ These components allow us to reuse code within our project, and throughout other
 		//parsed to show up as 'name-of-directive' in our HTML.
 
 		return {
-			  //you have 4 restrict options. You can use any of the 4 in any combonation.
+			  //you have 4 restrict options. You can use any of the 4 in any combination.
 			  //{'E': 'Element', 'A': 'Attribute', 'C': 'Class', 'M': 'Comment'}
 			  //typically we create them as Elements or Attributes.
 			restrict: 'EA',
@@ -30,14 +30,14 @@ These components allow us to reuse code within our project, and throughout other
 			controller: function($scope) { //We can create a controller in our directive!
 				$scope.test = 'OMG!';
 			},
-			  //this allows us to a special controller that nothing else can touch. 
+			  //this allows us to create a special controller that nothing else can touch. 
 			replace: true, //If we are using a template, we can choose to 
 			  //insert it's value wherever we call the directive.
 			link: function(scope, elem, attr) {
 		          // scope is the directive's scope,
 		          // elem is a jquery lite (or jquery full) object for the directive root element.
 		          // attr is a dictionary of attributes on the directive element.
-		      elem.bind('dblclick', function() {
+		      	elem.bind('dblclick', function() {
 
 		      });
 		    }
@@ -57,7 +57,7 @@ If you dig through the angular documentation and as you become more familiar wit
 + ng-view
 + ng-repeat
 + ng-click
-+ ect...
++ etc...
 
 ####Step 1
 
@@ -99,7 +99,7 @@ Now that we have created our basic setup lets focus on building a directive that
   }
 ````
 
-Notice a directive is a really a function that is returning an object, and on this object we are adding some very specific keys that are specific to directives, we just need to take advantage of them. Thinking about our needs in creating a spinner we are going to restrict our directive to an attribute.
+Notice a directive is really a function that is returning an object, and on this object we are adding some very specific keys that are specific to directives, we just need to take advantage of them. Thinking about our needs in creating a spinner we are going to restrict our directive to an attribute.
 
 We are also going to use isolate scope to ensure that our code is modular. However, we are going to want our directive to have access to the controller that it is used in. For example if we look at this example where we are sending a request to iTunes and returning an array of songs we are going to want to still call the function `getSongs()` when this button is clicked. To do this we need to pass in some keys to our scope object.
 
@@ -115,9 +115,9 @@ What we need is a way to grab the function that is being called with ng-click. W
 
 Notice that we have removed ng-click because it is no longer necessary as we will be calling the getSongData() from the directive's scope key request. 
 
-Now go ahead and setup the link block. This link block is very important when it comes to creating useful directives. It is through the link function that we ge access to three very important things the first is scope. 
+Now go ahead and setup the link block. This link block is very important when it comes to creating useful directives. It is through the link function that we get access to three very important things the first is scope. 
 
-#####A note about scope
+##### A note about scope
 When we talk about scope we are often referring to what block of code we are currently residing in and it is through scope that we have access to our variables and functions. What is important to understand when working with directives is that we often want to make sure we have an isolated scope so we know that our directive can be modular and not dependent upon a function or variable inside of a parent scope. The directive needs to hold all of its own functionality. This concept is not to be confused with being unable to use or take in functions or variables from a controller or parent scope and manipulate them. Think about ng-repeat="item in list". ng-repeat is a directive that is taking in a $scope variable called list and iterating through each item in that array therefore it must have access to the controller where $scope.list is defined. 
 
 Using scope appropriately and understanding how far down a scope tree you are can be confusing and difficult so it is okay to struggle with this concept. 
